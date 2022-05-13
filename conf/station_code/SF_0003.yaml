@@ -1,0 +1,49 @@
+station_code: SF_0003
+neighbors:
+- SF_0003
+- SF_0004
+- SF_0005
+- SF_0006
+- SF_0008
+
+hydra:
+  sweeper:
+    # direction:
+    # - maximize
+    # storage: "sqlite:///study.db"
+    # study_name: study
+    # n_trials: 50
+    # n_jobs: 1
+    search_space:
+      pos_label_weights.SF_0003:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      pos_label_weights.SF_0004:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      pos_label_weights.SF_0005:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      pos_label_weights.SF_0006:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      pos_label_weights.SF_0008:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+
+pos_label_weights:
+    SF_0003: 1
+    SF_0004: 1
+    SF_0005: 1
+    SF_0006: 1
+    SF_0008: 1

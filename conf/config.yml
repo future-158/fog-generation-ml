@@ -1,0 +1,40 @@
+defaults:
+  - _self_
+  - model_name@_global_: cb
+  - station_code@_global_: SF_0003
+  - override hydra/sweeper: optuna  
+
+api_version: 2.1
+stage: train
+
+pred_hour: 3
+target_name: y_${pred_hour}
+test_start: 2020-07-01
+
+log_prefix: ./data/log/${api_version}/${station_code}/${pred_hour}/${model_name}
+
+hydra:
+  job:
+    env_set:
+      CUDA_VISIBLE_DEVICES: "0"
+  run:
+    dir: ${log_prefix}/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${log_prefix}/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+
+
+catalogue:
+  processed: data/processed/${station_code}.pkl
+  model_in: data/model_in/${station_code}.pkl
+  validate: data/validate/${station_code}.pkl
+  test: data/test/${station_code}.pkl
+  log: data/log
+  model: data/model/${api_version}/${station_code}/${pred_hour}/${model_name}.pkl
+  test_result: data/model_out//${api_version}/${station_code}/${pred_hour}/${model_name}.yml
+
+transform:
+    korea: False
+  
+drop_cols: ['station_code']
+

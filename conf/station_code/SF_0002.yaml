@@ -1,0 +1,48 @@
+station_code: SF_0002
+neighbors:
+- SF_0001
+- SF_0002
+- SF_0007
+- SF_0009
+- SF_0010
+- SF_0011
+pos_label_weights:
+  SF_0001: 1
+  SF_0002: 1
+  SF_0007: 1
+  SF_0009: 1
+  SF_0010: 1
+  SF_0011: 1
+hydra:
+  sweeper:
+    search_space:
+      SF_0001:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      SF_0002:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      SF_0007:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      SF_0009:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      SF_0010:
+        type: int
+        low: 0
+        high: 50
+        step: 1
+      SF_0011:
+        type: int
+        low: 0
+        high: 50
+        step: 1

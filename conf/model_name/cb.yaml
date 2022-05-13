@@ -1,0 +1,31 @@
+model_name: cb
+hydra:
+  sweeper:
+    direction:
+    - maximize
+    storage: "sqlite:///study.db"
+    study_name: study
+    n_trials: 50
+    n_jobs: 1
+    search_space:
+      model_params.n_estimators:
+        type: int
+        low: 100
+        high: 200
+        step: 5
+      model_params.depth:
+        type: int
+        low: 5
+        high: 7
+        step: 1
+
+      model_params.min_data_in_leaf:
+        type: int
+        low: 1
+        high: 5
+        step: 1
+
+model_params:      
+  n_estimators: 100
+  depth: 5
+  min_data_in_leaf: 1

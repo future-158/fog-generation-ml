@@ -1,0 +1,14 @@
+ray[tune]
+catboost
+lightgbm
+xgboost
+hydra-core
+hydra-optuna-sweeper
+optuna
+ipykernel
+joblib
+scikit-learn
+pandas
+matplotlib
+scipy
+autoflake
