@@ -156,4 +156,15 @@ def transform_korea(vis: pd.Series) -> pd.Series:
     return vis
 
 if __name__ == '__main__':
-    pass
+    essential_folderes = [
+        'data/model',
+        'data/processed',
+        'data/hparams',
+        'data/clean',
+        'data/model_out',
+        'data/log'
+    ]
+    for folder in essential_folderes:
+        Path(folder).mkdir(parents=True, exist_ok=True)
+
+    

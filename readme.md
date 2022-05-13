@@ -6,6 +6,9 @@
 - conda activate venv/
 activate 환경
 
+- python src/step_1_pre_train_ml.py
+data/ 밑에 필수 폴더 생성
+
 - CUDA_VISIBLE_DEVICES='mygpu' python src/step_2_train_hpo_ml.py
 hpo 과정. 
 CUDA_VISIBLE_DEVICES 안하면 default 0번으로 돌아감
