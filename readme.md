@@ -1,3 +1,18 @@
+# update
+at 2022-05-24
+add s3 file download
+
+1. conda install awscli -y or pip install awscli
+2. aws configure
+AWS Access Key ID [None]: seafog
+AWS Secret Access Key [None]: "defaultpassword" hint: \w{3}\d{7}
+Default region name [None]: ENTER
+Default output format [None]: ENTER
+
+3. aws configure set default.s3.signature_version s3v4
+4. aws --endpoint-url http://oldgpu:9000 s3 cp s3://seafog data --recursive
+
+
 # install
 - make install
 환경 설치
