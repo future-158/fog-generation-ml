@@ -12,3 +12,4 @@ pandas
 matplotlib
 scipy
 autoflake
+awscli
